@@ -1,0 +1,20 @@
+{
+  "name": "workflow-agent-monorepo",
+  "version": "1.0.0",
+  "description": "Temporal-backed Workflow Agent",
+  "private": true,
+  "workspaces": [
+    "packages/temporal",
+    "packages/frontend"
+  ],
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "dev:frontend": "npm run dev -w packages/frontend",
+    "dev:worker": "npm run dev -w packages/temporal",
+    "build": "npm run build --workspaces",
+    "start": "npm run start --workspaces"
+  }
+}
